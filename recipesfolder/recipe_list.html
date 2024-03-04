@@ -7,13 +7,12 @@
 </head>
 <body>
     <h1><a href = '/recipes/list'>Recipe Book</a></h1>
-    <h2>{{ name }}</h2>
-    <h3>
+    <h2>
         <ul>
-            {% for ingredient in ingredients %}
-            <li>{{ ingredient.quantity }} {{ingredient.name}}</li>
+            {% for recipe in object_list %}
+            <li><a href= "{{ recipe.get_absolute_url }}" >{{ recipe.name }}</a></li>
             {% endfor %}
         </ul>
-    </h3>
+    </h2>
 </body>
 </html>
